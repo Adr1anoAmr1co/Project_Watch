@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project_Clock</title>
+    <style>
+        #Ck{
+            text-align: center;
+            color: #0f0;
+            font-weight: bold;
+            font-size: 30px;
+            width: 130px;
+            background-color: #000;
+            height: 130px;
+            height: 130px;
+            right: 200px;
+            left: 200px;
+            border-radius: 150px;
+            border: 5px solid greenyellow;
+            margin-left: 30%;
+            margin-top: 10%;
+        }
+        #clock{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background: #0f0;
+            margin-top: 0%;
+        }
+        body{
+            background-image: url(https://opontodentrodocirculo.files.wordpress.com/2015/05/a336e-download2b28329.jpg);
+            background-position: cover;
+        }        
+    </style>
+    <script>
+        function clock(){
+            var data=new Date();
+            var hor=data.getHours();
+            var min=data.getMinutes();
+            var seg=data.getSeconds();
+
+            if(hor<10){
+                hor="0" +hor;
+            }
+            if(min<10){
+                min="0" +min;
+            }
+            if(seg<10){
+                seg="0" +seg;
+            }
+
+            var horas = hor+":"+min+":"+seg;
+            document.getElementById("Ck").value=horas;
+        }
+
+        var time=setInterval(clock,1000);  
+
+    </script>
+    <h1 id="clock">PROJECT CLOCK</h1>    
+    </head>
+<body>
+    <input type="text" id="Ck">
+    
+    
+   </body>
+</html>
